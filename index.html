@@ -10,17 +10,14 @@
   </head>
   <body>
     <div id="app">
-      <app-btn>Submit</app-btn>
+      <gen-btn>Submit</gen-btn>
     </div>
 
-    <script>
+    <script type="module">
+      import GeneralButton from "./js/components/GeneralButton.js";
       let app = {
         components: {
-          "app-btn": {
-            template: `
-                    <button class="bg-gray-200 hover:bg-gray-400 border rounded px-10 py-5"><slot/></button>
-                `,
-          },
+          "gen-btn": GeneralButton,
         },
       };
       Vue.createApp(app).mount("#app");
