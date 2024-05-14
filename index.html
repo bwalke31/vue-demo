@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Demo</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <app-btn>Submit</app-btn>
+    </div>
+
+    <script>
+      let app = {
+        components: {
+          "app-btn": {
+            template: `
+                    <button class="bg-gray-200 hover:bg-gray-400 border rounded px-10 py-5"><slot/></button>
+                `,
+          },
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

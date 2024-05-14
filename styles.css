@@ -1,0 +1,35 @@
+.text-green {
+  color: green;
+}
+
+.text-red {
+  color: red;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slash-through {
+  position: relative;
+  text-decoration: none;
+  color: black; /* or any other color you prefer */
+}
+.slash-through::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  height: 1px; /* adjust thickness of the line */
+  background-color: black; /* or any other color you prefer */
+  /* transform: rotate(-90deg); */
+  transform-origin: center;
+}
