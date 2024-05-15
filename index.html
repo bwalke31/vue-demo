@@ -9,18 +9,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="app">
-      <gen-btn>Submit</gen-btn>
-    </div>
-
+    <div id="app"></div>
     <script type="module">
-      import GeneralButton from "./js/components/GeneralButton.js";
-      let app = {
-        components: {
-          "gen-btn": GeneralButton,
-        },
-      };
-      Vue.createApp(app).mount("#app");
+      import App from "./js/components/App.js";
+      Vue.createApp(App).mount("#app");
     </script>
   </body>
 </html>
