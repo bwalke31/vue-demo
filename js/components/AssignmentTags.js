@@ -4,7 +4,7 @@ export default {
     `
     <div class="flex gap-3">
             <button 
-            @click="$emit('change', tag)"
+            @click="$emit('update:currentTag', tag)"
             v-for="tag in tags" 
             class="hover:bg-sky-700 border rounded px-1 py-0.5 my-2"
             :class="{

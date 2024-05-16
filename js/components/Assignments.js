@@ -18,11 +18,7 @@ export default {
 
   data() {
     return {
-      assignments: [
-        { name: "Complete math HW", complete: false, id: 1, tag: "Math" },
-        { name: "Science paper due", complete: false, id: 2, tag: "Science" },
-        { name: "Study for math test", complete: false, id: 3, tag: "Math" },
-      ],
+      assignments: [],
       newAssignment: "",
     };
   },
@@ -34,6 +30,16 @@ export default {
       return this.assignments.filter((a) => !a.complete);
     },
   },
+
+  created() {
+    fetch("http://localhost:3001/assignments")
+      .then((resp) => resp.json())
+      .then((assignments) => {
+        console.log(assignments);
+        this.assignments = assignments;
+      });
+  },
+
   methods: {
     add(name) {
       this.assignments.push({
