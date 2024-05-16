@@ -1,8 +1,10 @@
 import AssignmentSingle from "./AssignmentSingle.js";
+import AssignmentTags from "./AssignmentTags.js";
 
 export default {
   components: {
     AssignmentSingle,
+    AssignmentTags,
   },
   template:
     /*html*/
@@ -12,18 +14,11 @@ export default {
            <span>({{assignments.length}})</span>
           </h1>
 
-          <div class="flex gap-3">
-            <button 
-            @click="currentTag = tag"
-            v-for="tag in tags" 
-            class="hover:bg-sky-700 border rounded px-1 py-0.5 my-2"
-            :class="{
-              'bg-green-500 border-black': tag == currentTag
-            }"
-            >
-              {{tag}}
-              </button>
-          </div>
+          <assignment-tags 
+          :initial-tags="assignments.map(a => a.tag)"
+          :current-tag="currentTag"
+          @change="currentTag = $event">
+          </assignment-tags>
          
           <ul>
             <assignment-single
@@ -50,9 +45,6 @@ export default {
     filteredAssignments() {
       if (this.currentTag == "all") return this.assignments;
       return this.assignments.filter((a) => a.tag == this.currentTag);
-    },
-    tags() {
-      return ["all", ...new Set(this.assignments.map((a) => a.tag))];
     },
   },
 };

@@ -19,9 +19,9 @@ export default {
   data() {
     return {
       assignments: [
-        { name: "A1", complete: false, id: 1, tag: "Math" },
-        { name: "A2", complete: false, id: 2, tag: "Science" },
-        { name: "A3", complete: false, id: 3, tag: "Math" },
+        { name: "Complete math HW", complete: false, id: 1, tag: "Math" },
+        { name: "Science paper due", complete: false, id: 2, tag: "Science" },
+        { name: "Study for math test", complete: false, id: 3, tag: "Math" },
       ],
       newAssignment: "",
     };
